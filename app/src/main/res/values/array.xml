@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="location_name">
+        <item>Ha Noi</item>
+        <item>Da Nang</item>
+        <item>Ho Chi Minh city</item>
+    </string-array>
+
+    <string-array name="location_value">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="measurement_name">
+        <item>Imperial Fahrenheit Unit</item>
+        <item>Metric Celcius Unit</item>
+    </string-array>
+
+    <string-array name="measurement_value">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

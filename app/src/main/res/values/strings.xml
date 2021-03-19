@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SunshineApp</string>
+    <string name="daHumidity">"Humidity: "</string>
+    <string name="daPressure">"Pressure: "</string>
+    <string name="daWind">"Wind: "</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_my_settings">mySettingsActivity</string>
+
+</resources>

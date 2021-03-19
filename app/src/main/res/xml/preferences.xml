@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory
+    android:title="LOCATION AND MEASUREMENT UNIT">
+
+    <ListPreference
+        android:entries="@array/location_name"
+        android:entryValues="@array/location_name"
+        android:key="favorite_location"
+        android:title="Favorite location"
+        android:summary="Select your preferred location"
+        />
+
+    <ListPreference
+        android:entries="@array/measurement_name"
+        android:entryValues="@array/measurement_name"
+        android:key="favorite_measurement"
+        android:title="Unit of measurement"
+        android:summary="Select your temperature measurement unit"
+        />
+
+</PreferenceCategory>
+
+</PreferenceScreen>
