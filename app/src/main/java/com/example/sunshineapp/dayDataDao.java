@@ -22,5 +22,5 @@ public interface dayDataDao {
     void deleteAllDayData();
 
     @Query("SELECT * FROM dayData")
-    LiveData<List<dayDataEntity>> getAllDayData();
+    LiveData<List<dayDataEntity>> getAllDayDataEntity();
 }

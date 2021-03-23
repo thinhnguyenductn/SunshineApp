@@ -1,18 +1,14 @@
 package com.example.sunshineapp;
 
-import android.app.Application;
-import android.os.Handler;
 import android.util.Log;
 
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
 
 public class weatherViewModel extends ViewModel {
-    private final weatherRepository mWeatherRepository = new weatherRepository();
+    private final dayDataFetching mWeatherRepository = new dayDataFetching();
     public LiveData<ArrayList<dayData>> mutableLiveData;
 
 
