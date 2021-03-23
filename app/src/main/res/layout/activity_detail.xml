@@ -3,6 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        />
+
     <TextView
         android:id="@+id/da_WeekDay"
         android:layout_width="wrap_content"
@@ -10,6 +18,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:layout_below="@id/my_toolbar"
         android:textSize="24sp"
         android:textStyle="bold" />
 
