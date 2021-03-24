@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String DAY_DATA_BUNDLE = "dayDataBundle";
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
     public static String URL;
-
+    SharedPreferences mPreferences;
+    public final String SHARED_PREFS_FILE =
+            "com.example.sunshineapp.sharedprefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
+        mPreferences = getSharedPreferences(SHARED_PREFS_FILE, MODE_PRIVATE);
     }
 
     @Override
@@ -80,6 +83,18 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
         return true;
+    }
+
+    @Override
+    protected void onPause() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        String locationPreference = sharedPreferences.getString(mySettingsActivity.PREF_FAVORITE_LOCATION,"Ha Noi");
+        String measurementUnitPreference = sharedPreferences.getString(mySettingsActivity.PREF_FAVORITE_MEASUREMENT,"Metric Celcius Unit");
+        SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+        preferencesEditor.putString(mySettingsActivity.PREF_FAVORITE_LOCATION,locationPreference);
+        preferencesEditor.putString(mySettingsActivity.PREF_FAVORITE_MEASUREMENT,measurementUnitPreference);
+        preferencesEditor.apply();
+        super.onPause();
     }
 
     @Override
@@ -131,11 +146,8 @@ public class MainActivity extends AppCompatActivity {
         String measurementUnitInfo = "&units=metric";
         String URL;
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-
-
-        String locationPreference = sharedPreferences.getString(mySettingsActivity.PREF_FAVORITE_LOCATION,"Ha Noi");
-        String measurementUnitPreference = sharedPreferences.getString(mySettingsActivity.PREF_FAVORITE_MEASUREMENT,"Metric Celcius Unit");
+        String locationPreference = mPreferences.getString(mySettingsActivity.PREF_FAVORITE_LOCATION,"Ha Noi");
+        String measurementUnitPreference = mPreferences.getString(mySettingsActivity.PREF_FAVORITE_MEASUREMENT,"Metric Celcius Unit");
 
         if (locationPreference.equals("Da Nang"))
         {

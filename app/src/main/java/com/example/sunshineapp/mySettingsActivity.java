@@ -67,6 +67,7 @@ public class mySettingsActivity extends AppCompatActivity {
         @Override
         public void onPause() {
             super.onPause();
+
             getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
         }
     }

@@ -1,10 +1,14 @@
 package com.example.sunshineapp;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.preference.PreferenceManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,8 +29,8 @@ public class dayDataFetching {
     public static final String LOG_TAG = dayDataFetching.class.getSimpleName();
     private final ExecutorService service = Executors.newFixedThreadPool(2);
     public MutableLiveData<ArrayList<dayData>> mutableLiveData = new MutableLiveData<>();
-
-    /*public  MutableLiveData<ArrayList<dayData>> getLiveWeatherData(){
+SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+/*public  MutableLiveData<ArrayList<dayData>> getLiveWeatherData(){
         Log.v("Repository","Passing data to mutablevariable result: "+mutableLiveData.toString());
         return mutableLiveData;
     }*/
@@ -135,4 +139,5 @@ public class dayDataFetching {
         }
     return null;
     }
+
 }
